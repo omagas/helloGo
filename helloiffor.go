@@ -46,10 +46,30 @@ func main() {
 
 
 
+    fmt.Println("【For multi ref】")
+    myfunc001(1,3,5,7,9)
+
+}
+
+//Call by value
+func add1(a int) int {
+    a = a+1 // 我们改变了a的值
+    return a //返回一个新值
+}
+
+//Call by Ref
+func add1(a *int) int { // 请注意，
+    *a = *a+1 // 修改了a的值
+    return *a // 返回新值
 }
 
 
 
+func myfunc001(arg ...int) {
+      for _, n := range arg {
+          fmt.Printf("And the number is: %d\n", n)
+      }
+}
 
 
 //返回 A+B 和 A*B
